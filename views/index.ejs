@@ -1,0 +1,37 @@
+<h3>Add Character</h3>
+<form method="POST" action="/character/add">
+  <input type="text" name="name" placeholder="Name" />
+  <input type="submit" value="Submit" />
+</form>
+
+<h3>Add Item</h3>
+<form method="POST" action="/item/add">
+  <input type="text" name="name" placeholder="Name" />
+  <input type="submit" value="Submit" />
+</form>
+
+<h3>Add Valuation of Item</h3>
+<form method="POST" action="/values/connect">
+  <input type="text" name="name1" placeholder="Character Name" />
+  <input type="text" name="name2" placeholder="Item Name" />
+  <input type="number" name="amount" placeholder="0" />
+  <input type="submit" value="Submit" />
+</form>
+
+<h3>Characters</h3>
+
+<ul>
+  <% characters.forEach(function(character){ %>
+  <li>
+    <a href="character/<%=character.id%>/values"><%= character.name %> </a>
+  </li>
+  <% }) %>
+</ul>
+
+<h3>Items</h3>
+
+<ul>
+  <% items.forEach(function(item){ %>
+  <li><%= item.name %></li>
+  <% }) %>
+</ul>
